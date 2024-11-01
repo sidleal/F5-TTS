@@ -9,26 +9,26 @@ target_sample_rate = 24000
 n_mel_channels = 100
 hop_length = 256
 
-tokenizer = "pinyin"  # 'pinyin', 'char', or 'custom'
+tokenizer = "char"  # 'pinyin', 'char', or 'custom'
 tokenizer_path = None  # if tokenizer = 'custom', define the path to the tokenizer you want to use (should be vocab.txt)
-dataset_name = "Emilia_ZH_EN"
+dataset_name = "nurc_min_prep"
 
 # -------------------------- Training Settings -------------------------- #
 
 exp_name = "F5TTS_Base"  # F5TTS_Base | E2TTS_Base
 
-learning_rate = 7.5e-5
+learning_rate = 5e-5
 
-batch_size_per_gpu = 38400  # 8 GPUs, 8 * 38400 = 307200
-batch_size_type = "frame"  # "frame" or "sample"
+batch_size_per_gpu = 8  # 8 GPUs, 8 * 38400 = 307200
+batch_size_type = "sample"  # "frame" or "sample"
 max_samples = 64  # max sequences per batch if use frame-wise batch_size. we set 32 for small models, 64 for base models
 grad_accumulation_steps = 1  # note: updates = steps / grad_accumulation_steps
 max_grad_norm = 1.0
 
-epochs = 11  # use linear decay, thus epochs control the slope
-num_warmup_updates = 20000  # warmup steps
-save_per_updates = 50000  # save checkpoint per steps
-last_per_steps = 5000  # save last checkpoint per steps
+epochs = 1  # use linear decay, thus epochs control the slope
+num_warmup_updates = 100  # warmup steps
+save_per_updates = 2000  # save checkpoint per steps
+last_per_steps = 8000  # save last checkpoint per steps
 
 # model params
 if exp_name == "F5TTS_Base":
