@@ -1,0 +1,3 @@
+#f5-tts_infer-cli --model "F5-TTS" --ref_audio "ref_audio.wav" --ref_text "Hi there, my name is Sidney and I'm here testing F5-TTS." --gen_text "Agora eu sei falar português também."
+#f5-tts_infer-cli --ckpt_file "/home/sidleal/sources/F5-TTS/ckpts/F5TTS_Base/model_last.pt" --ref_audio "ref_audio.wav" --ref_text "Hi there, my name is Sidney and I'm here testing F5-TTS." --gen_text "Agora eu sei falar português também."
+f5-tts_infer-cli --ckpt_file "/home/sidleal/sources/F5-TTS/ckpts/F5TTS_Base/model_last.pt" --ref_audio "ref_audio_2.wav" --ref_text "Pega pra mim, tá ali do lado do comedouro da gata na sala, onde eu deixo pra assistir o filminho no sofa." --gen_text "Agora eu sei falar português também."

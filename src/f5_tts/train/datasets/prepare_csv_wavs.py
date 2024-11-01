@@ -44,7 +44,7 @@ def prepare_csv_wavs_dir(input_dir):
             continue
         audio_duration = get_audio_duration(audio_path)
         # assume tokenizer = "pinyin"  ("pinyin" | "char")
-        text = convert_char_to_pinyin([text], polyphone=polyphone)[0]
+        #text = convert_char_to_pinyin([text], polyphone=polyphone)[0]
         sub_result.append({"audio_path": audio_path, "text": text, "duration": audio_duration})
         durations.append(audio_duration)
         vocab_set.update(list(text))
